@@ -8,6 +8,7 @@ namespace WpfApp7
 {
     public class Vrachi
     {
+        public int ID {  get; set; }
         public string VFirstname { get; set; }
         public string VLastname { get; set; }
         public string VPatronymic { get; set; }

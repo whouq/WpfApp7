@@ -7,7 +7,44 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".2*"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1" FontSize="15" FontWeight="Bold" Content="Порошкошоп у Анжелы" />
+            <Button Margin="3" Grid.Column="2" Content="Корзина" Command="{Binding OpenBasket}" />
+        </Grid>
 
+        <ListView Grid.Row="1" ItemsSource="{Binding Products}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Артикул" DisplayMemberBinding="{Binding Article}" />
+                    <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding Title}" />
+                    <GridViewColumn Header="Краткое описание" DisplayMemberBinding="{Binding Description}" />
+                    <GridViewColumn Header="Стоимость" DisplayMemberBinding="{Binding Price}" />
+                    <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding MaxCount}" />
+                    <GridViewColumn Header="Изображение">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImageBytes}" Height="100" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Заказать" Tag="{Binding}" Click="AddProductToBasket"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

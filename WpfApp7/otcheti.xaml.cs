@@ -1,4 +1,8 @@
-﻿using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -6,22 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfApp7
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для otcheti.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class otcheti : Window
     {
-        public MainWindow()
+        public otcheti()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

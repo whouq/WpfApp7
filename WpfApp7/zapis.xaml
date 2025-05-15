@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp7.zapis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp7"
+        mc:Ignorable="d"
+        Title="zapis" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="362*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="667*"/>
+            <ColumnDefinition Width="68*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Записи на прием" HorizontalAlignment="Left" Margin="257,22,0,0" VerticalAlignment="Top" Width="272" Height="40" Grid.Column="1" Grid.RowSpan="2"/>
+        <ListBox Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="ListBox_SelectionChanged"/>
+
+    </Grid>
+</Window>

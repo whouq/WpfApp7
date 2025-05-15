@@ -8,6 +8,7 @@ namespace WpfApp7
 {
     public class Zapis
     {
+        public int ID { get; set; }
         public TimeOnly Nachalo { get; set; }
         public TimeOnly Konez { get; set; }
         public string Vrach { get; set; }
